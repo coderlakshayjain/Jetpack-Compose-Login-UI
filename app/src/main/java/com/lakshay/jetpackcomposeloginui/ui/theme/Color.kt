@@ -1,4 +1,4 @@
-package com.lakshay.composeloginui.ui.theme
+package com.lakshay.jetpackcomposeloginui.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme

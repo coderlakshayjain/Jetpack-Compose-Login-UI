@@ -1,4 +1,4 @@
-package com.lakshay.composeloginui.ui.theme
+package com.lakshay.jetpackcomposeloginui.ui.theme
 
 import android.app.Activity
 import android.os.Build

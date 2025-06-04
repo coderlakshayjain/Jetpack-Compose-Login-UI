@@ -1,4 +1,4 @@
-package com.lakshay.composeloginui
+package com.lakshay.jetpackcomposeloginui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -13,7 +13,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -25,9 +27,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.lakshay.composeloginui.ui.theme.Black
+import com.lakshay.jetpackcomposeloginui.ui.theme.Black
+import com.lakshay.jetpackcomposeloginui.ui.theme.BlueGray
 
 @Preview
 @Composable
@@ -43,15 +47,69 @@ fun LoginScreen() {
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 30.dp)
-            ){
+            ) {
 
-                LoginTextField(label = "Email", trailing = "", modifier = Modifier.fillMaxWidth())
-                Spacer(modifier = Modifier.width(15.dp))
-                LoginTextField(label = "Password", trailing = "", modifier = Modifier.fillMaxWidth())
-                Button(onClick = {/*TODO*/}) { }
+                LoginSection()
+                Spacer(modifier = Modifier.height(30.dp))
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Or continue with",
+                        style = MaterialTheme.typography.labelMedium.copy(color = Color(0xFF64748B))
+                    )
+                    Spacer(modifier = Modifier.height(20.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        SocialMediaLogIn(
+                            icon = R.drawable.google,
+                            text = "Google",
+                            modifier = Modifier.weight(1f)
+                        ) {
+
+                        }
+                        Spacer(modifier = Modifier.width(20.dp))
+                        SocialMediaLogIn(
+                            icon = R.drawable.facebook,
+                            text = "Facebook",
+                            modifier = Modifier.weight(1f)
+                        ) {
+
+                        }
+                    }
+                }
             }
-
         }
+    }
+}
+
+@Composable
+private fun LoginSection() {
+    LoginTextField(label = "Email", trailing = "", modifier = Modifier.fillMaxWidth())
+    Spacer(modifier = Modifier.height(15.dp))
+    LoginTextField(
+        label = "Password",
+        trailing = "Forgot?",
+        modifier = Modifier.fillMaxWidth()
+    )
+    Spacer(modifier = Modifier.height(20.dp))
+
+    Button(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(40.dp),
+        onClick = {/*TODO*/ },
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (isSystemInDarkTheme()) BlueGray else Black,
+            contentColor = Color.White
+        ),
+        shape = RoundedCornerShape(size = 4.dp)
+    ) {
+        Text(
+            text = "Log in",
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
+        )
     }
 }
 
@@ -74,7 +132,6 @@ private fun TopSection() {
             modifier = Modifier.padding(top = 80.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
             Icon(
                 modifier = Modifier.size(42.dp),
                 painter = painterResource(id = R.drawable.logo),

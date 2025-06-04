@@ -1,4 +1,4 @@
-package com.lakshay.composeloginui
+package com.lakshay.jetpackcomposeloginui
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

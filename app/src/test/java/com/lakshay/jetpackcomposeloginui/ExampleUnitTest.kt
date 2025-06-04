@@ -1,4 +1,4 @@
-package com.lakshay.composeloginui
+package com.lakshay.jetpackcomposeloginui
 
 import org.junit.Test
 

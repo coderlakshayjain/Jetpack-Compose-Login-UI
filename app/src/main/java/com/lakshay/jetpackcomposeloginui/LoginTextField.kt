@@ -1,4 +1,4 @@
-package com.lakshay.composeloginui
+package com.lakshay.jetpackcomposeloginui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -10,10 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import com.lakshay.composeloginui.ui.theme.Black
-import com.lakshay.composeloginui.ui.theme.focusedTextFieldText
-import com.lakshay.composeloginui.ui.theme.textFieldContainer
-import com.lakshay.composeloginui.ui.theme.unfocusedTextFieldText
+import com.lakshay.jetpackcomposeloginui.ui.theme.Black
+import com.lakshay.jetpackcomposeloginui.ui.theme.focusedTextFieldText
+import com.lakshay.jetpackcomposeloginui.ui.theme.textFieldContainer
+import com.lakshay.jetpackcomposeloginui.ui.theme.unfocusedTextFieldText
 
 @Composable
 fun LoginTextField(

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.lakshay.composeloginui"
+    namespace = "com.lakshay.jetpackcomposeloginui"
     compileSdk = 35
 
     defaultConfig {
